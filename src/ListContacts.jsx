@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const ListContacts = ({contacts, removeContact}) => (
+let ListContacts = ({contacts, removeContact}) => (
     <ol className='contact-list'>
         {contacts.map(contact => (
             <li className='contact-list-item' key={contact.id}>
@@ -14,5 +15,10 @@ const ListContacts = ({contacts, removeContact}) => (
         ))}
     </ol>
 )
+
+ListContacts.propTypes = {
+    contacts: PropTypes.array.isRequired,
+    removeContact: PropTypes.func.isRequired
+}
 
 export default ListContacts
