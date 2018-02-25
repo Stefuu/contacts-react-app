@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ListContacts = ({contacts}) => (
+const ListContacts = ({contacts, removeContact}) => (
     <ol className='contact-list'>
         {contacts.map(contact => (
             <li className='contact-list-item' key={contact.id}>
@@ -9,7 +9,7 @@ const ListContacts = ({contacts}) => (
                     <p>{contact.name}</p>
                     <p>{contact.email}</p>
                 </div>
-                <button className='contact-remove'>Remove</button>
+                <button onClick={() => removeContact(contact)} className='contact-remove'>Remove</button>
             </li>
         ))}
     </ol>
